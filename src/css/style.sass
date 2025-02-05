@@ -1,0 +1,254 @@
+@import "@/css/variables.sass"
+
+body
+  background: $background
+  color: $text-color
+  font-family: Arial, sans-serif
+  margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+
+.add-people, .add-menu, .result-page
+  background: $panel
+  padding: 25px
+  border-radius: 16px
+  width: 600px
+  text-align: center
+  box-shadow: 0px 4px 10px $shadow-color
+  border: 1px solid $highlight
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.button
+  background: $button-bg
+  border: 2px solid $highlight
+  color: #fff
+  padding: 12px 18px
+  border-radius: 20px
+  cursor: pointer
+  font-size: 16px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: 0.3s
+  &:hover
+    background: $button-hover
+    color: $text-color
+
+.add-button, .next-button, .calculate-button
+  @extend .button
+  margin: auto
+
+.next-button, .calculate-button
+  width: 100%
+  margin-top: 20px
+
+.calculate-button
+  &:disabled
+    background: rgba(255, 255, 255, 0.2)
+    border-color: rgba(255, 255, 255, 0.3)
+    cursor: not-allowed
+
+.delete-button
+  background: none
+  border: none
+  color: #fff
+  font-size: 24px
+  cursor: pointer
+  transition: 0.3s
+  &:hover
+    color: rgba(255, 0, 0, 0.6)
+
+.empty-state
+  color: rgba(255, 255, 255, 0.6)
+  font-size: 18px
+  margin-top: 20px
+
+.menu-item
+  display: flex
+  flex-direction: column
+  background: $button-bg
+  padding: 12px
+  margin: 10px 0
+  border-radius: 10px
+  transition: 0.3s
+
+.person-input, .menu-input
+  flex: 1
+  background: none
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  color: #fff
+  padding: 10px
+  font-size: 16px
+  border-radius: 8px
+  transition: border 0.3s
+  &:focus
+    border-color: $highlight
+    outline: none
+
+.menu-input-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 10px
+  background: $input-bg
+  padding: 10px
+  border-radius: 10px
+  margin: 10px 0
+
+.price-input
+  width: 20%
+  min-width: 80px
+  text-align: center
+
+.people-selection, .people-list
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  background: transparent
+  padding: 5px
+  border-radius: 10px
+  margin-top: 0px
+  justify-content: center
+
+.person-chip
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background: transparent
+  color: $highlight
+  border-radius: 10px
+  padding: 5px
+  font-size: 14px
+  cursor: pointer
+  transition: 0.3s
+  &:hover
+    background: rgba(255, 51, 51, 0.2)
+
+.selected
+  background: $highlight
+  color: white
+
+.avatar
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  background: white
+  color: $highlight
+  font-weight: bold
+  font-size: 14px
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0px 2px 4px $shadow-color
+
+.person-name
+  font-size: 12px
+  margin-top: 5px
+  color: white
+
+ul
+  list-style: none
+  padding: 0
+
+li
+  display: flex
+  align-items: center
+  gap: 10px
+  padding: 12px
+  background: $button-bg
+  margin: 6px 0
+  border-radius: 15px
+  transition: 0.7s
+  width: 100%
+  box-sizing: border-box
+  &:hover
+    background: rgba(255, 51, 51, 0.2)
+
+.payer-label
+  font-size: 14px
+  color: white
+
+.payer-dropdown
+  background: $input-bg
+  color: $text-color
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  padding: 8px
+  font-size: 14px
+  border-radius: 8px
+  cursor: pointer
+  transition: 0.3s
+  &:focus
+    border-color: $highlight
+    outline: none
+
+.summary
+  text-align: center
+  font-size: 18px
+  color: $text-color
+  margin-top: 20px
+  padding: 10px
+  border-top: 1px solid rgba(255, 255, 255, 0.3)
+
+.result-page
+  .title
+    font-size: 24px
+    font-weight: bold
+    color: $highlight
+
+  .tabs
+    display: flex
+    justify-content: center
+    gap: 10px
+    margin-bottom: 20px
+
+    button
+      background: #444
+      border: none
+      padding: 10px 20px
+      font-size: 14px
+      color: white
+      border-radius: 8px
+      cursor: pointer
+      transition: 0.3s
+
+      &.active
+        background: $highlight
+        color: black
+
+  .result-list
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+  .debt-block
+    background: #2a2a2a
+    padding: 15px
+    border-radius: 12px
+    text-align: left
+    border: 2px solid $highlight
+    color: white
+    margin: 15px 0
+
+    h2
+      font-size: 18px
+      color: $highlight
+      margin-bottom: 10px
+
+    p
+      font-size: 16px
+      margin: 5px 0
+
+  .no-debt
+    text-align: center
+    font-size: 14px
+    color: #aaa
+
+    .thumbs-up
+      font-size: 32px
+      display: block
+      margin-top: 10px
