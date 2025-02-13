@@ -9,11 +9,28 @@
     </div>
 
     <div v-else>
-      <div v-for="(item, index) in menuStore.menuItems" :key="item.id" class="menu-item">
+      <div 
+        v-for="(item, index) in menuStore.menuItems" 
+        :key="item.id" 
+        class="menu-item"
+      >
         <div class="menu-input-container">
-          <input v-model="item.name" placeholder="Название" class="menu-input" />
-          <input v-model="item.price" type="number" placeholder="Цена" class="menu-input price-input" />
-          <v-btn icon class="delete-button" @click="removeItem(index)">
+          <input 
+            v-model="item.name" 
+            placeholder="Название" 
+            class="menu-input" 
+          />
+          <input 
+            v-model="item.price" 
+            type="number" 
+            placeholder="Цена" 
+            class="menu-input price-input" 
+          />
+          <v-btn 
+            icon 
+            class="delete-button" 
+            @click="removeItem(index)"
+          >
             ✖
           </v-btn>
         </div>
@@ -22,7 +39,11 @@
           <span class="payer-label">Заплатил:</span>
           <select v-model="item.payer" class="payer-dropdown">
             <option value="" disabled>Выберите</option>
-            <option v-for="person in peopleStore.people" :key="person.id" :value="person.id">
+            <option 
+              v-for="person in peopleStore.people" 
+              :key="person.id" 
+              :value="person.id"
+            >
               {{ person.name }}
             </option>
           </select>
@@ -46,8 +67,12 @@
               :class="{ selected: item.selectedPeople?.includes(person.id) }"
               class="person-chip"
             >
-              <div class="avatar">{{ person.name ? person.name.charAt(0).toUpperCase() : '?' }}</div>
-              <span class="person-name">{{ person.name }}</span>
+              <div class="avatar">
+                {{ person.name ? person.name.charAt(0).toUpperCase() : '?' }}
+              </div>
+              <span class="person-name">
+                {{ person.name }}
+              </span>
             </div>
           </div>
         </div>
@@ -55,7 +80,9 @@
     </div>
 
     <div class="summary">
-      <p>Промежуточный итог: <strong>{{ totalAmount }} ₽</strong></p>
+      <p>
+        Промежуточный итог: <strong>{{ totalAmount }} ₽</strong>
+      </p>
       <v-btn 
         class="calculate-button"
         :disabled="!isReadyToCalculate"
@@ -67,6 +94,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import { computed } from 'vue'

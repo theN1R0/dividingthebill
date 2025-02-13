@@ -22,11 +22,24 @@
 
     <div class="result-list">
       <div v-if="activeTab === 'who-to-whom'">
-        <div v-for="(debts, item) in detailedDebts" :key="item" class="menu-block">
+        <div 
+          v-for="(debts, item) in detailedDebts" 
+          :key="item" 
+          class="menu-block"
+        >
           <h2>За блюдо "{{ item }}"</h2>
-          <div v-for="(debtsList, debtor) in debts" :key="debtor" class="debt-block">
+
+          <div 
+            v-for="(debtsList, debtor) in debts" 
+            :key="debtor" 
+            class="debt-block"
+          >
             <h3>Пользователь {{ debtor }} должен:</h3>
-            <p v-for="debt in debtsList" :key="debt.to">
+
+            <p 
+              v-for="debt in debtsList" 
+              :key="debt.to"
+            >
               {{ debt.to }} - {{ debt.amount }} ₽
             </p>
           </div>
@@ -34,11 +47,24 @@
       </div>
 
       <div v-if="activeTab === 'whom-to-who'">
-        <div v-for="(creditors, person) in detailedWhomToWho" :key="person" class="menu-block">
+        <div 
+          v-for="(creditors, person) in detailedWhomToWho" 
+          :key="person" 
+          class="menu-block"
+        >
           <h2>Пользователю {{ person }} должны</h2>
-          <div v-for="(debtsList, item) in creditors" :key="item" class="debt-block">
+
+          <div 
+            v-for="(debtsList, item) in creditors" 
+            :key="item" 
+            class="debt-block"
+          >
             <h3>За блюдо "{{ item }}"</h3>
-            <p v-for="debt in debtsList" :key="debt.from">
+
+            <p 
+              v-for="debt in debtsList" 
+              :key="debt.from"
+            >
               {{ debt.from }} - {{ debt.amount }} ₽
             </p>
           </div>
@@ -47,6 +73,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import { computed, ref } from 'vue'

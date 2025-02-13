@@ -11,8 +11,14 @@
       </div>
 
       <ul>
-        <li v-for="(person, index) in peopleStore.people" :key="person.id" class="person-entry">
-          <v-avatar class="avatar">{{ person.name ? person.name.charAt(0).toUpperCase() : '?' }}</v-avatar>
+        <li 
+          v-for="(person, index) in peopleStore.people" 
+          :key="person.id" 
+          class="person-entry"
+        >
+          <v-avatar class="avatar">
+            {{ person.name ? person.name.charAt(0).toUpperCase() : '?' }}
+          </v-avatar>
 
           <input 
             v-model="peopleStore.people[index].name" 
@@ -20,17 +26,22 @@
             placeholder="Введите имя"
           />
 
-          <v-btn icon class="delete-button" @click="removePerson(person.id)">
+          <v-btn 
+            icon 
+            class="delete-button" 
+            @click="removePerson(person.id)"
+          >
             ✖
           </v-btn>
         </li>
       </ul>
     </div>
 
-    <v-btn class="next-button" @click="submitPeople">{{ buttonText }}</v-btn>
+    <v-btn class="next-button" @click="submitPeople">
+      {{ buttonText }}
+    </v-btn>
   </div>
 </template>
-
 
 
 <script>
