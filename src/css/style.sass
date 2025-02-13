@@ -62,6 +62,11 @@ body
   &:hover
     color: rgba(255, 0, 0, 0.6)
 
+.disabled-button 
+  background: rgba(255, 255, 255, 0.2) !important
+  border-color: rgba(255, 255, 255, 0.3) !important
+  cursor: not-allowed !important
+
 .empty-state
   color: rgba(255, 255, 255, 0.6)
   font-size: 18px
@@ -206,8 +211,8 @@ li
     gap: 10px
     margin-bottom: 20px
 
-    button
-      background: #444
+    .tab-button
+      background: #444 !important
       border: none
       padding: 10px 20px
       font-size: 14px
@@ -215,9 +220,10 @@ li
       border-radius: 8px
       cursor: pointer
       transition: 0.3s
+      text-transform: none // Отключаем капс у кнопок Vuetify
 
       &.active
-        background: $highlight
+        background: $highlight !important
         color: black
 
   .result-list
